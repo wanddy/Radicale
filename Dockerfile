@@ -1,16 +1,16 @@
-FROM alpine:latest
+FROM arm32v6/python:latest
 
 # Version of Radicale (e.g. 2.0.0)
 ARG VERSION=master
 
 # Install dependencies
-RUN apk add --no-cache \
-      python3 \
-      python3-dev \
-      build-base \
-      libffi-dev \
-      ca-certificates \
-      openssl
+#RUN apk add --no-cache \
+#      python3 \
+#      python3-dev \
+#      build-base \
+#      libffi-dev \
+#      ca-certificates \
+#      openssl
 # Install Radicale
 RUN wget --quiet https://github.com/Kozea/Radicale/archive/${VERSION}.tar.gz --output-document=radicale.tar.gz && \
     tar xzf radicale.tar.gz && \
